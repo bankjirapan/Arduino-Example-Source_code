@@ -9,18 +9,11 @@
 //Setting  Auth Blynk
 char auth[] = "";
 
-
 int PumNum = D5;
 int DataFormApp;
 
-
-//Setting timmer 
+//Setting timmer
 int TimeCountDown = 1200;
-
-
-
-
-
 
 //Read parameter form App blynk
 
@@ -28,11 +21,6 @@ BLYNK_WRITE(V1) // Set Pin
 {
   DataFormApp = param.asInt();
 }
-
-
-
-
-
 
 void setup() {
 
@@ -43,23 +31,25 @@ void setup() {
 
 }
 
-
-
 void loop() {
 
+
+  //Check Event form app blynk
   if (DataFormApp == 1) {
 
     if (TimeCountDown != 0) {
       digitalWrite(PumNum, HIGH);
       delay(1000);
       Count_time(1);
-  
+
       Blynk.virtualWrite(V3, TimeCountDown);
 
       if (TimeCountDown == 0) {
         digitalWrite(PumNum, LOW);
         Blynk.virtualWrite(V1, 0);
         DataFormApp = 0;
+
+        //Setting timmer defulut;
         TimeCountDown = 1200;
         Blynk.virtualWrite(V3, TimeCountDown);
       }
@@ -69,7 +59,11 @@ void loop() {
   } else if (DataFormApp == 0) {
     digitalWrite(PumNum, LOW);
     Serial.print(DataFormApp);
+
+    //Setting timmer defulut;
     TimeCountDown = 1200;
+
+
     Blynk.virtualWrite(V3, TimeCountDown);
     Count_time(0);
 
@@ -92,7 +86,7 @@ void Count_time(int Status) {
     if (TimeCountDown == 0) {
       Status = 0;
     }
-    if(DataFormApp == 0){
+    if (DataFormApp == 0) {
       Status = 0;
     }
   }
