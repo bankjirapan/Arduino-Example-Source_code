@@ -1,9 +1,19 @@
-# Arduino-Example-Source_code
-*********
-Source code for Arduino
+# Source code Arduino & NodeMCU
+******************************* <br>
+### ขา Node MCU <br>
+D0 = 16 <br>
+D1 = 5 <br>
+D2 = 4 <br>
+D3 = 0 <br>
+D4 = 2 <br>
+D5 = 14 <br>
+D6 = 12 <br>
+D7 = 13 <br>
+D8 = 15 <br>
+D9 = 3; RX <br>
+D10 = 1; บอร์ดเขียนว่า TX <br>
+GND = สายกราวน์ดิน <br>
+VIN = จะจ่ายไฟ 5V ออกมา สามารถนำไฟ 5V เข้าขานี้ได้เช่นกัน
 
-1.Blynk 
-  Blynk Example connect Blynk with applicaiion 
-  
-2.Blynk Countdown
-  Countdown timer and auto off switch when countdown finish
+
+
