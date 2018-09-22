@@ -17,14 +17,12 @@ int TimeCountDown = 1200;
 //Blynk
 #define BLYNK_PRINT Serial
 
-
 //Line Token
 String TokenLine = "";
 
 
+
 char auth[] = "";
-
-
 BLYNK_WRITE(V1) //Button Widget is writing to pin V1
 {
   DataFormApp = param.asInt();
